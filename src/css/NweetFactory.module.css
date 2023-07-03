@@ -1,0 +1,110 @@
+.Upload_Input_Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-direction: column;
+  width: 2200px;
+  height: 1150px;
+  background: darkblue;
+  background-color: rgba(0, 0, 0, 0.372);
+  border-radius: 60px;
+}
+
+.Title {
+  font-size: 60px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  margin-bottom: 50px;
+  margin-top: 360px;
+}
+
+.Upload_Input_Box_2 {
+  width: 1000px;
+  height: 800px;
+  background-color: rgb(69, 127, 235);
+  border-radius: 30px;
+  margin-bottom: 150px;
+}
+
+.Upload_Btn {
+  margin-bottom: 900px;
+  margin-left: 1800px;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(69, 127, 235);
+  color: white;
+  border: none;
+  border-radius: 30px;
+}
+
+.Input1 {
+  width: 600px;
+  height: 60px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.Input2 {
+  margin-top: 40px;
+}
+
+.button {
+  margin-top: 500px;
+}
+
+.button input {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(233, 122, 103);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.button button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(233, 122, 103);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.img {
+  margin-top: 80px;
+  margin-bottom: -420px;
+}
+
+.img button {
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(233, 122, 103);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.Nweet_Box {
+  position: relative;
+  top: -600px;
+}
+
+.ee button {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(233, 122, 103);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+}

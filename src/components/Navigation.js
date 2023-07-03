@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "css/Nav.module.css";
 
 const Navigation = ({ userObj }) => {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <Link to="/">Home</Link>

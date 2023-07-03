@@ -1,10 +1,38 @@
 import { dbService, storageService } from "fbase";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import styles from "css/NweetFactory.module.css";
+import Nweet from "./Nweet";
 
-const NweetFactory = ({ userObj }) => {
+const NweetFactory = ({ userObj, nweetObj }) => {
   const [nweet, setNweet] = useState("");
   const [attachment, setAttachment] = useState("");
+  const [showUpload, setShowUpload] = useState(false);
+  const [nweets, setNweets] = useState([]);
+
+  useEffect(() => {
+    dbService.collection("nweets").onSnapshot((snapshot) => {
+      const nweetArray = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setNweets(nweetArray);
+    });
+  }, []);
+
+  const onUploadButtonClick = () => {
+    setShowUpload(true);
+  };
+
+  const onUploadCancelButtonClick = () => {
+    setShowUpload(false);
+  };
+
+  const onUploadFinishButtonClick = () => {
+    setTimeout(() => {
+      setShowUpload(false);
+    }, 1000);
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -26,7 +54,7 @@ const NweetFactory = ({ userObj }) => {
     await dbService.collection("nweets").add(nweetObj);
 
     setNweet("");
-    setAttachment();
+    setAttachment("");
   };
 
   const onChange = (event) => {
@@ -53,24 +81,61 @@ const NweetFactory = ({ userObj }) => {
 
   const onClearAttachment = () => setAttachment(null);
   return (
-    <div>
+    <div className={styles.Upload_Input_Box}>
+      <h1 className={styles.Title}>1030</h1>
+
       <form onSubmit={onSubmit}>
-        <input
-          value={nweet}
-          onChange={onChange}
-          type="text"
-          placeholder="What's on your mind?"
-          maxLength={120}
-        />
-        <input type="file" accept="image/*" onChange={onFileChange} />
-        <input type="submit" value="Nweet" />
-        {attachment && (
-          <div>
-            <img src={attachment} alt="img " width="50px" height="50px" />
-            <button onClick={onClearAttachment}>삭제</button>
+        {!showUpload && (
+          <button className={styles.Upload_Btn} onClick={onUploadButtonClick}>
+            업로드 버튼
+          </button>
+        )}
+
+        {showUpload && (
+          <div className={styles.Upload_Input_Box_2}>
+            <input
+              className={styles.Input1}
+              value={nweet}
+              onChange={onChange}
+              type="text"
+              placeholder="What's on your mind?"
+              maxLength={120}
+            />
+            <br />
+            <input
+              className={styles.Input2}
+              type="file"
+              accept="image/*"
+              onChange={onFileChange}
+            />
+            <br />
+            {attachment && (
+              <div className={styles.img}>
+                <img src={attachment} alt="img " width="300px" height="300px" />
+                <br />
+                <button onClick={onClearAttachment}>삭제</button>
+              </div>
+            )}
+            <div className={styles.button}>
+              <input
+                onClick={onUploadFinishButtonClick}
+                type="submit"
+                value="Nweet"
+              />
+              <button onClick={onUploadCancelButtonClick}>취소</button>
+            </div>
           </div>
         )}
       </form>
+      <div className={styles.Nweet_Box}>
+        {nweets.map((nweet) => (
+          <Nweet
+            key={nweet.id}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObj.uid}
+          />
+        ))}
+      </div>
     </div>
   );
 };

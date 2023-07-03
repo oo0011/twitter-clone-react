@@ -1,9 +1,10 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
+import styles from "css/NweetFactory.module.css";
 
 const Nweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
-  const [newNweet, setNewNweet] = useState(nweetObj.text);
+  const [newNweet, setNewNweet] = useState(nweetObj?.text || "");
 
   const onDeleteClick = async () => {
     const ok = window.confirm("삭제 하시겠습니까?");
@@ -31,7 +32,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
   };
 
   return (
-    <div>
+    <div className={styles.ee}>
       {editing ? (
         <>
           <form onSubmit={onSubmit}>
@@ -53,10 +54,11 @@ const Nweet = ({ nweetObj, isOwner }) => {
             <img
               src={nweetObj.attachmentUrl}
               alt="img"
-              width="50px"
-              height="50px"
+              width="300px"
+              height="300px"
             />
           )}
+          <br />
           {isOwner && (
             <>
               <button onClick={onDeleteClick}>글 삭제</button>

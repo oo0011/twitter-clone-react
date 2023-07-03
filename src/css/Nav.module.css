@@ -1,0 +1,19 @@
+.nav li {
+  list-style-type: none;
+  color: white;
+  display: flex;
+  list-style: none;
+}
+
+.nav {
+}
+
+.nav Link {
+  text-decoration: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
