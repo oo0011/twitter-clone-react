@@ -1,6 +1,7 @@
 import { authService, dbService } from "fbase";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "css/Profile.module.css";
 
 const Profile = ({ refreshUser, userObj }) => {
   const navigate = useNavigate();
@@ -44,16 +45,20 @@ const Profile = ({ refreshUser, userObj }) => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          type="text"
-          placeholder="Display name"
-          value={newDisplayName}
-        />
-        <input type="submit" value="Update Profile" />
-      </form>
-      <button onClick={onLogOutClick}>Log Out</button>
+      <div className={styles.Profile_Box}>
+        <form onSubmit={onSubmit}>
+          <input
+            onChange={onChange}
+            type="text"
+            placeholder="Display name"
+            value={newDisplayName}
+          />
+          <input className={styles.button1} type="submit" value="수정" />
+        </form>
+        <button className={styles.button2} onClick={onLogOutClick}>
+          로그아웃
+        </button>
+      </div>
     </>
   );
 };
