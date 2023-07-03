@@ -1,0 +1,38 @@
+.Auth_Box {
+  width: 700px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.372);
+  margin-top: 100px;
+  border-radius: 60px;
+}
+
+.Auth_Button_Box {
+  margin-top: 100px;
+}
+
+.Auth_Box button {
+  width: 400px;
+  height: 60px;
+  text-align: center;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.Auth_Box button:first-child {
+  background-color: rgb(71, 154, 71);
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
+
+.Auth_Box button:last-child {
+  background-color: black;
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
