@@ -52,8 +52,10 @@ const AuthForm = () => {
     <div className={styles.Login_Input_Box}>
       <>
         <form onSubmit={onSubmit}>
-          <div>
-            <h1 className={styles.Title}>1030</h1>
+          <div className={styles.column}>
+            <div className={styles.title_box}>
+              <h1 className={styles.title_box}>1030</h1>
+            </div>
             <input
               name="email"
               type="email"
@@ -82,12 +84,6 @@ const AuthForm = () => {
               }
             />{" "}
             {error}
-            <input
-              className={styles.submit_button}
-              onClick={toggleAccount}
-              type="submit"
-              value={newAccount ? "계정이 있어요!" : "계정이 없으신가요?"}
-            />
           </div>
         </form>
       </>

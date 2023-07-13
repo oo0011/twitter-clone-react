@@ -1,46 +1,28 @@
 .Login_Input_Box {
+  width: 1000px;
+  height: 1000px;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Login_Input_Box input {
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
   text-align: center;
-  margin: 0px;
-  width: 400px;
-  height: 60px;
-  border: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.308);
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
-  font-size: 20px;
-}
-
-.Login_Input_Submit_Box input {
-  width: 400px;
-  height: 40px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-}
-
-.Login_Input_Submit_Box {
-  margin-top: 20px;
-}
-
-.Login_Input_Submit_Box :first-child {
-  background-color: rgb(69, 127, 235);
-}
-.Login_Input_Submit_Box :last-child {
-  background-color: white;
-  color: rgb(71, 154, 71);
-  width: 400px;
-  height: 40px;
-}
-
-.Title {
-  margin-bottom: 60px;
-  font-size: 60px;
-  font-family: "Times New Roman", Times, serif;
-  color: white;
+  font-size: 50px;
+  background-color: rgb(206, 241, 211);
+  color: rgb(93, 212, 112);
 }
