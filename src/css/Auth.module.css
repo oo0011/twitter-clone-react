@@ -15,3 +15,41 @@ body {
   margin: 0, auto;
   height: 1300px;
 }
+
+.Auth_Button_Box {
+  display: flex;
+  position: absolute;
+  top: 77%;
+}
+
+.Auth_Button_Box button {
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.Auth_Button_Box button:first-child {
+  background-color: white;
+}
+
+.Auth_Button_Box button:last-child {
+  background-color: black;
+  color: white;
+}
+
+.Auth_Button_Box img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}

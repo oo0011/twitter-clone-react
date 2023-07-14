@@ -46,6 +46,7 @@ const NweetFactory = ({ userObj, nweetObj }) => {
       attachmentUrl = await response.ref.getDownloadURL();
     }
     const nweetObj = {
+      name: userObj.displayName,
       text: nweet,
       createAt: Date.now(),
       creatorId: userObj.uid,
@@ -84,49 +85,65 @@ const NweetFactory = ({ userObj, nweetObj }) => {
     <div className={styles.Upload_Input_Box}>
       <h1 className={styles.Title}>1030</h1>
 
-      <form onSubmit={onSubmit}>
-        {!showUpload && (
-          <button className={styles.Upload_Btn} onClick={onUploadButtonClick}>
-            업로드 버튼
-          </button>
-        )}
+      <div className={styles.form_box}>
+        <form onSubmit={onSubmit}>
+          {!showUpload && (
+            <button className={styles.Upload_Btn} onClick={onUploadButtonClick}>
+              +
+            </button>
+          )}
 
-        {showUpload && (
-          <div className={styles.Upload_Input_Box_2}>
-            <input
-              className={styles.Input1}
-              value={nweet}
-              onChange={onChange}
-              type="text"
-              placeholder="What's on your mind?"
-              maxLength={120}
-            />
-            <br />
-            <input
-              className={styles.Input2}
-              type="file"
-              accept="image/*"
-              onChange={onFileChange}
-            />
-            <br />
-            {attachment && (
-              <div className={styles.img}>
-                <img src={attachment} alt="img " width="300px" height="300px" />
-                <br />
-                <button onClick={onClearAttachment}>삭제</button>
-              </div>
-            )}
-            <div className={styles.button}>
+          {showUpload && (
+            <div className={styles.Upload_Input_Box_2}>
               <input
+                className={styles.Input1}
+                value={nweet}
+                onChange={onChange}
+                type="text"
+                placeholder="What's on your mind?"
+                maxLength={120}
+              />
+              <input
+                className={styles.Input1_submit}
                 onClick={onUploadFinishButtonClick}
                 type="submit"
                 value="Nweet"
               />
-              <button onClick={onUploadCancelButtonClick}>취소</button>
+              <button
+                className={styles.delete_btn}
+                onClick={onUploadCancelButtonClick}
+              >
+                취소
+              </button>
+
+              <br />
+              <div className={styles.filebox}>
+                <label className={styles.label} htmlFor="file">
+                  Add Photo?
+                </label>
+                <label className={styles.label_btn} htmlFor="file">
+                  +
+                </label>
+                <input type="file" id="file" onChange={onFileChange} />
+              </div>
+
+              {attachment && (
+                <div className={styles.img}>
+                  <img
+                    src={attachment}
+                    alt="img"
+                    width="200px"
+                    height="200px"
+                  />
+                  <br />
+                  <button onClick={onClearAttachment}>삭제</button>
+                </div>
+              )}
             </div>
-          </div>
-        )}
-      </form>
+          )}
+        </form>
+      </div>
+
       <div className={styles.Nweet_Box}>
         {nweets.map((nweet) => (
           <Nweet

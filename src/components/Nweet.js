@@ -1,6 +1,10 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 import styles from "css/NweetFactory.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Nweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -49,22 +53,33 @@ const Nweet = ({ nweetObj, isOwner }) => {
         </>
       ) : (
         <>
-          <h4>{nweetObj.text}</h4>
-          {nweetObj.attachmentUrl && (
-            <img
-              src={nweetObj.attachmentUrl}
-              alt="img"
-              width="300px"
-              height="300px"
-            />
-          )}
-          <br />
-          {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>글 삭제</button>
-              <button onClick={toggleEditing}>수정</button>
-            </>
-          )}
+          <div className={styles.Nweet_Boxs}>
+            <div className={styles.nweet_user_box}>
+              <div className={styles.icon_box}>
+                <FontAwesomeIcon icon={faUser} className={styles.icon} />
+              </div>
+              <span>{nweetObj.name}</span>
+              {isOwner && (
+                <>
+                  <button onClick={toggleEditing} className={styles.button1}>
+                    <FontAwesomeIcon icon={faPen} className={styles.icon2} />
+                  </button>
+                  <button onClick={onDeleteClick} className={styles.button2}>
+                    <FontAwesomeIcon icon={faTrash} className={styles.icon2} />
+                  </button>
+                </>
+              )}
+            </div>
+            <h4>{nweetObj.text}</h4>
+            {nweetObj.attachmentUrl && (
+              <img
+                src={nweetObj.attachmentUrl}
+                alt="img"
+                width="300px"
+                height="300px"
+              />
+            )}
+          </div>
         </>
       )}
     </div>

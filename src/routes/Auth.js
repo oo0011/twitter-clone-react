@@ -1,6 +1,8 @@
 import AuthForm from "components/AuthForm";
 import { authService, firebaseInstance } from "fbase";
 import styles from "css/Auth.module.css";
+import google from "../image/google_logo.png";
+import github from "../image/github_logo.png";
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -23,10 +25,13 @@ const Auth = () => {
       <AuthForm />
       <div className={styles.Auth_Button_Box}>
         <button onClick={onSocialClick} name="google">
-          Continue with Google
+          <img src={google} alt="google" />
+          Google
         </button>
+
         <button onClick={onSocialClick} name="github">
-          Continue with Github
+          <img src={github} alt="github" />
+          Github
         </button>
       </div>
     </div>
