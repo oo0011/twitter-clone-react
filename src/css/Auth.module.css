@@ -19,7 +19,7 @@ body {
 .Auth_Button_Box {
   display: flex;
   position: absolute;
-  top: 77%;
+  top: 90%;
 }
 
 .Auth_Button_Box button {

@@ -9,10 +9,11 @@ const Navigation = ({ userObj }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>|</li>
         <li>
           {userObj && (
             <Link to="/profile">
-              {userObj.displayName ? userObj.displayName : "유저"} Profile
+              {userObj.displayName ? userObj.displayName : "유저"}님 프로필
             </Link>
           )}
         </li>

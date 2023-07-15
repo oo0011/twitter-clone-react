@@ -1,19 +1,33 @@
-.nav li {
-  list-style-type: none;
-  color: white;
-  display: flex;
-  list-style: none;
-}
-
 .nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
 }
 
-.nav Link {
-  text-decoration: none;
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav a {
+li {
+  margin-right: 10px;
+  color: gray;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+a {
+  color: gray;
+  font-weight: 700;
   text-decoration: none;
-  color: white;
-  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 15px;
 }

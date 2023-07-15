@@ -10,6 +10,14 @@ const NweetFactory = ({ userObj, nweetObj }) => {
   const [showUpload, setShowUpload] = useState(false);
   const [nweets, setNweets] = useState([]);
 
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  const formattedDate = year + "-" + month + "-" + day;
+
   useEffect(() => {
     dbService.collection("nweets").onSnapshot((snapshot) => {
       const nweetArray = snapshot.docs.map((doc) => ({
@@ -48,7 +56,7 @@ const NweetFactory = ({ userObj, nweetObj }) => {
     const nweetObj = {
       name: userObj.displayName,
       text: nweet,
-      createAt: Date.now(),
+      createAt: formattedDate,
       creatorId: userObj.uid,
       attachmentUrl,
     };
@@ -83,14 +91,21 @@ const NweetFactory = ({ userObj, nweetObj }) => {
   const onClearAttachment = () => setAttachment(null);
   return (
     <div className={styles.Upload_Input_Box}>
-      <h1 className={styles.Title}>1030</h1>
-
+      <div className={styles.title_box}>
+        <h1 className={styles.Title}>1030</h1>
+      </div>
       <div className={styles.form_box}>
         <form onSubmit={onSubmit}>
           {!showUpload && (
-            <button className={styles.Upload_Btn} onClick={onUploadButtonClick}>
-              +
-            </button>
+            <div className={styles.Upload_box}>
+              <span>{formattedDate}</span>
+              <button
+                className={styles.Upload_Btn}
+                onClick={onUploadButtonClick}
+              >
+                +
+              </button>
+            </div>
           )}
 
           {showUpload && (
@@ -126,19 +141,6 @@ const NweetFactory = ({ userObj, nweetObj }) => {
                 </label>
                 <input type="file" id="file" onChange={onFileChange} />
               </div>
-
-              {attachment && (
-                <div className={styles.img}>
-                  <img
-                    src={attachment}
-                    alt="img"
-                    width="200px"
-                    height="200px"
-                  />
-                  <br />
-                  <button onClick={onClearAttachment}>삭제</button>
-                </div>
-              )}
             </div>
           )}
         </form>

@@ -1,38 +1,92 @@
 .Profile_Box {
-  width: 2200px;
-  height: 1150px;
-  background-color: rgba(0, 0, 0, 0.372);
-  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Profile_Box input:first-child {
-  margin-top: 300px;
-  width: 600px;
-  height: 60px;
-  border: none;
-  border-radius: 30px;
+.form_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  height: 600px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.374);
+  border-radius: 40px;
+  background-color: white;
+}
+
+.title_box {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: rgb(93, 212, 112);
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 50px;
+}
+
+.profile_input {
+  width: 700px;
+  height: 70px;
+  border-radius: 50px;
   text-align: center;
+  color: rgb(90, 174, 99);
+  background-color: rgb(205, 228, 208);
+  border: none;
+  padding-top: 5px;
   font-size: 30px;
 }
 
-.button1 {
-  width: 200px;
-  height: 50px;
-  background-color: rgb(233, 122, 103);
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-size: 20px;
-  margin-left: 30px;
+.modify_input::placeholder {
+  color: rgb(90, 174, 99);
+  font-size: 30px;
 }
 
-.button2 {
-  width: 500px;
-  height: 50px;
-  background-color: rgb(69, 127, 235);
-  border: none;
+.profile_head {
+  width: 900px;
+  height: 40px;
+  display: flex;
+  text-align: left;
+  margin-bottom: 150px;
+}
+
+.profile_head {
+  font-size: 50px;
+  margin-bottom: 100pxs;
+}
+
+.profile_btn {
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
-  color: white;
+  margin-left: 20px;
   font-size: 20px;
-  margin-top: 500px;
+  background-color: rgb(130, 221, 142);
+  border: 5px solid rgba(38, 201, 60, 0.911);
+  border-radius: 10px;
+  color: rgba(38, 201, 60, 0.911);
+  color: white;
+}
+
+.profile_cancel {
+  width: 150px;
+  height: 70px;
+  margin-left: 20px;
+  font-size: 20px;
+  background-color: rgb(223, 110, 81);
+  border: 5px solid rgba(238, 49, 16, 0.911);
+  border-radius: 10px;
+  color: white;
+  margin-top: 150px;
 }

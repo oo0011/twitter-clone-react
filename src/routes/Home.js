@@ -2,6 +2,7 @@ import Nweet from "components/Nweet";
 import NweetFactory from "components/NweetFactory";
 import { dbService, storageService } from "fbase";
 import React, { useEffect, useState } from "react";
+import styles from "../css/index.module.css";
 
 const Home = ({ userObj }) => {
   const [nweets, setNweets] = useState([]);
@@ -17,9 +18,11 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <div>
-      <NweetFactory userObj={userObj} />
-    </div>
+    <>
+      <div>
+        <NweetFactory userObj={userObj} />
+      </div>
+    </>
   );
 };
 

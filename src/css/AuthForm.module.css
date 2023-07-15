@@ -2,8 +2,8 @@
   width: 1000px;
   height: 1000px;
   border: none;
-  border-left: 1px solid rgb(113, 196, 124);
-  border-right: 1px solid rgb(113, 196, 124);
+  border-left: 2px solid rgb(113, 196, 124);
+  border-right: 2px solid rgb(113, 196, 124);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +27,7 @@
   font-size: 50px;
   background-color: rgb(206, 241, 211);
   color: rgb(93, 212, 112);
+  font-family: "Times New Roman", Times, serif;
 }
 
 .email_box {

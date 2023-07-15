@@ -45,19 +45,26 @@ const Profile = ({ refreshUser, userObj }) => {
 
   return (
     <>
+      <div className={styles.title_box}>
+        <h1 className={styles.Title}>1030</h1>
+      </div>
       <div className={styles.Profile_Box}>
-        <form onSubmit={onSubmit}>
-          <input
-            onChange={onChange}
-            type="text"
-            placeholder="Display name"
-            value={newDisplayName}
-          />
-          <input className={styles.button1} type="submit" value="수정" />
-        </form>
-        <button className={styles.button2} onClick={onLogOutClick}>
-          로그아웃
-        </button>
+        <div className={styles.form_box}>
+          <h2 className={styles.profile_head}>프로필 수정</h2>
+          <form onSubmit={onSubmit}>
+            <input
+              className={styles.profile_input}
+              onChange={onChange}
+              type="text"
+              placeholder="Display name"
+              value={newDisplayName}
+            />
+            <input className={styles.profile_btn} type="submit" value="수정" />
+          </form>
+          <button className={styles.profile_cancel} onClick={onLogOutClick}>
+            로그아웃
+          </button>
+        </div>
       </div>
     </>
   );
