@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgb(130, 221, 142);
+  background-color: white;
 }
 
 .Auth_Box {
@@ -19,7 +19,7 @@ body {
 .Auth_Button_Box {
   display: flex;
   position: absolute;
-  top: 90%;
+  top: 73%;
 }
 
 .Auth_Button_Box button {

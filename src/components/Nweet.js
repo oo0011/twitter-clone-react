@@ -82,7 +82,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
                   <FontAwesomeIcon icon={faUser} className={styles.icon} />
                 </div>
                 <span>{nweetObj.name}</span>
-                <spna className={styles.user_date}>{nweetObj.createAt}</spna>
+                <span className={styles.user_date}>{nweetObj.createAt}</span>
                 {isOwner && (
                   <>
                     <button onClick={toggleEditing} className={styles.button1}>
